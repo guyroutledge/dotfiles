@@ -47,7 +47,7 @@ ssh -f -L 3306:localhost:3306 git@web1.cloud.tomandco.co.uk -N
 #--------------------
 # Git Auto Completion
 #--------------------
-source /Users/guy/.git-completion.sh
+source ~/.git-completion.sh
 #export PS1="!\! \u: \W\[\e[0;33m\]\$(__git_ps1 ' (%s)')\[\e[33;0m\] \[\e[1;31m\]>>\[\e[31;0m\]"
 
 #-----------------
