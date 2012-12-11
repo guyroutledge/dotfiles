@@ -5,6 +5,16 @@
 #
 # Created on:		Nov 16, 2012
 
+function add_spacing {
+	local spacing=""
+	local width
+	(( width = ${COLUMNS} - 15 ))
+	for i in {1..$width}; do
+		spacing="${spacing} "
+	done
+	echo $spacing
+}
+
 function collapse_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
@@ -17,11 +27,17 @@ function prompt_char {
 function battery_charge {
     echo `$BAT_CHARGE` 2>/dev/null
 }
+function separator_color {
+	[ -n "$SSH_CLIENT" ] && echo red || echo grey
+}
+function host_color {
+	[ -n "$SSH_CLIENT" ] && echo red || echo cyan
+}
 
 PROMPT='
-%{$fg[green]%}--➤ %{$fg[white]%}%D{[%I:%M:%S]} %{$fg[green]%}---------------------------------------------------------
-%{$fg[cyan]%}--➤ %n%{$fg[blue]%}@%{$fg[cyan]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
-%{$fg[yellow]%}--➤%{$reset_color%} '
+%{$bg[$(separator_color)]%}%{$fg[white]%}--@ %{$fg[white]%}%D{[%I:%M:%S]}$(add_spacing)%{$reset_color%}
+%{$reset_color%}%{$fg[cyan]%}--☛ %n%{$fg[blue]%}@%{$fg[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
+%{$fg[yellow]%}--%#%{$reset_color%} '
 
 RPROMPT='%{$fg_bold[green]%}$(battery_charge)%{$reset_color%} !%{%B%F{cyan}%}%!%{%f%k%b%}'
 
