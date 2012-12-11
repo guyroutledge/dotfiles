@@ -36,10 +36,10 @@ function host_color {
 
 PROMPT='
 %{$bg[$(separator_color)]%}%{$fg[white]%}--@ %{$fg[white]%}%D{[%I:%M:%S]}$(add_spacing)%{$reset_color%}
-%{$reset_color%}%{$fg[cyan]%}--☛ %n%{$fg[blue]%}@%{$fg[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
+%{$reset_color%}%{$fg[$(host_color)]%}--☛ %n%{$fg[blue]%}@%{$fg[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
 %{$fg[yellow]%}--%#%{$reset_color%} '
 
-RPROMPT='%{$fg_bold[green]%}$(battery_charge)%{$reset_color%} !%{%B%F{cyan}%}%!%{%f%k%b%}'
+RPROMPT='%{$fg_bold[green]%}$(battery_charge)%{$reset_color%} !%{%B%F{$(host_color)}%}%!%{%f%k%b%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg_bold[red]%}$(prompt_char) %{$fg[blue]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
