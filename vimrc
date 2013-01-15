@@ -5,6 +5,13 @@ set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
 
+" backup to ~/.tmp 
+set backup 
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set backupskip=/tmp/*,/private/tmp/* 
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set writebackup
+
 " Tabs are four spaces wide
 set tabstop=4
 " Newlines should start at the same level as the line above
