@@ -60,6 +60,10 @@ set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
 
 " We're using a 256 colour terminal.
 set t_Co=256
+" Set the default font: 12px Monaco
+set gfn=Monaco:h12
+" Set the default theme
+colorscheme distinguished
 
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
