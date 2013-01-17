@@ -31,15 +31,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/local/git/bin
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
+
 #----------------------------------
 # Launch mvim in terminal
 # ---------------------------------
 alias mvim='mvim -v'
-
-#----------------------------------
-# use Sublime Text 2 as git editor
-#----------------------------------
-export GIT_EDITOR='subl -wl1'
 
 #------------------------
 # Tunnel into Tom and Co
