@@ -34,3 +34,6 @@
 [submodule "vim/bundle/lint.vim"]
 	path = vim/bundle/lint.vim
 	url = git@github.com:joestelmach/lint.vim.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
