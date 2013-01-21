@@ -1,0 +1,43 @@
+# Global Custom Snippets
+
+# Exit out everything stored in an array
+snippet exit
+	exit('<pre>'.print_r($${1:variable},1));
+
+
+# Title snippet for clear consitent sectioning
+snippet title
+	//*************************
+	//  	$$ ${1:title}
+	//**************************
+
+	${2}
+	
+# Custom WP_Query
+snippet wpq
+	<?php
+	$args = array(
+		'${1:property}' =>  ${2:value}
+	);
+	$${3:query} = new WP_Query($args);
+	?>
+
+	<?php if ( $$3->have_posts() ) : while( $$3->have_posts() ) : $$3->the_post(); ?>
+
+		<?php the_content() ?>
+
+	<?php endwhile; endif; wp_reset_query() ?>
+
+# Start a new WP page
+snippet new
+	<?php get_header() ?>
+	<?php the_post() ?>
+
+		${1}
+
+	<?php get_footer() ?>
+
+# Featured image
+snippet image
+	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'large') ?>
+	<img class="${1}" src="<?php echo timthumb($image[0], ${2}, ${3}) alt="${4}" ?>">${5}
