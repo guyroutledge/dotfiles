@@ -5,11 +5,11 @@ set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
 
-" backup to ~/.tmp 
-set backup 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
-set backupskip=/tmp/*,/private/tmp/* 
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+" backup to ~/.tmp
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 " Tabs are four spaces wide
@@ -70,7 +70,8 @@ set t_Co=256
 " Set the default font: 12px Monaco
 set gfn=Monaco:h12
 " Set the default theme
-colorscheme distinguished
+let g:zenburn_high_Contrast = 1
+colorscheme zenburn
 
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
@@ -118,6 +119,9 @@ inoremap jj <ESC>
 
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" strip trailing whitespace on save
+autocmd FileType css,scss,sass,html,php,javascript,js,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " comma-A: start an Ack search
 nnoremap <leader>a :Ack
 " comma-S: sort CSS properties alphabetically
@@ -132,3 +136,13 @@ nnoremap <leader>v V`]
 nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
 nnoremap <leader>[ f,a<CR><ESC>
+
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+nnoremap <silent><C-J> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" comma-vrc opens vimrc in a new tab and automagically sources on save
+map <leader>vimrc :tabe ~/dotfiles/vimrc<cr>
+autocmd bufwritepost vimrc source $MYVIMRC
