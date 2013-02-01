@@ -27,15 +27,15 @@ function prompt_char {
 function battery_charge {
     echo `$BAT_CHARGE` 2>/dev/null
 }
-function separator_color {
-	[ -n "$SSH_CLIENT" ] && echo red || echo grey
-}
+# function separator_color {
+# 	[ -n "$SSH_CLIENT" ] && echo red || echo grey
+# }
 function host_color {
 	[ -n "$SSH_CLIENT" ] && echo red || echo cyan
 }
 
 PROMPT='
-%{$bg[$(separator_color)]%}%{$fg[white]%}--@ %{$fg[white]%}%D{[%I:%M:%S]}$(add_spacing)%{$reset_color%}
+%{$bg[grey]%}%{$fg[white]%}--@ %{$fg[white]%}%D{[%I:%M:%S]}$(add_spacing)%{$reset_color%}
 %{$reset_color%}%{$fg_bold[$(host_color)]%}--? %n%{$fg[$(host_color)]%}@%{$reset_color%}%{$fg_bold[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
 %{$fg[yellow]%}--%#%{$reset_color%} '
 
