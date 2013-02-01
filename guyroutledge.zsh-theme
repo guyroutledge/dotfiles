@@ -36,7 +36,7 @@ function host_color {
 
 PROMPT='
 %{$bg[$(separator_color)]%}%{$fg[white]%}--@ %{$fg[white]%}%D{[%I:%M:%S]}$(add_spacing)%{$reset_color%}
-%{$reset_color%}%{$fg[$(host_color)]%}--☛ %n%{$fg_bold[$(host_color)]%}@%{$reset_color%}%{$fg[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
+%{$reset_color%}%{$fg_bold[$(host_color)]%}--? %n%{$fg[$(host_color)]%}@%{$reset_color%}%{$fg_bold[$(host_color)]%}%m%{$reset_color%} in %{$fg[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
 %{$fg[yellow]%}--%#%{$reset_color%} '
 
 RPROMPT='%{$fg_bold[green]%}$(battery_charge)%{$reset_color%} !%{%B%F{$(host_color)}%}%!%{%f%k%b%}'
