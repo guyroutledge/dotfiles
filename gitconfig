@@ -40,6 +40,8 @@
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
         ls = ls-files
 
+		code-review = difftool origin/master...
+
         # Show files ignored by git:
         ign = ls-files -o -i --exclude-standard
 		switch = !legit switch \"$@\"
@@ -55,3 +57,14 @@
 	helper = osxkeychain
 [push]
 	default = tracking
+[diff]
+	tool = Kaleidoscope
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
