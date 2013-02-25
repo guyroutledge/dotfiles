@@ -27,6 +27,9 @@ plugins=(git osx battery github sublime)
 
 source $ZSH/oh-my-zsh.sh
 
+# Turn off auto correct
+unsetopt correct_all
+
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/local/git/bin
 
