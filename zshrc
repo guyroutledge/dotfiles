@@ -35,11 +35,6 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/loc
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
-#----------------------------------
-# Launch mvim in terminal
-# ---------------------------------
-alias mvim='mvim -v'
-
 #------------------------
 # Tunnel into Tom and Co
 #------------------------
@@ -112,7 +107,7 @@ alias verbose="cd ~/Sites/guy/verbose/"
 # Edit .zshrc
 #------------
 
-alias zrc="subl ~/.zshrc"
+alias zrc="mvim ~/.zshrc"
 
 #-----
 # Misc
