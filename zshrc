@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/local/git/bin
+export PATH=/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/local/git/bin
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
