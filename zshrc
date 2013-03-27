@@ -41,6 +41,16 @@ export PATH=/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/g
 function mysql_tunnel() {
 ssh -f -L 3306:localhost:3306 git@web1.cloud.tomandco.co.uk -N
 }
+#---------------
+# Do Webdev
+#---------------
+
+function webdev_mysql() {
+  echo "Killing existing connection (sudo)..."
+  sudo lsof -Pnl +M -i @127.0.0.1:3306 | awk '/[0-9]/ {print $2}' | xargs sudo kill
+  echo "Opening new connection (ssh)..."
+  ssh -f -L 3306:localhost:3306 guy@webdev.bigfish.co.uk -N
+}
 
 #--------------------
 # Git Auto Completion
@@ -48,11 +58,19 @@ ssh -f -L 3306:localhost:3306 git@web1.cloud.tomandco.co.uk -N
 source ~/.git-completion.sh
 #export PS1="!\! \u: \W\[\e[0;33m\]\$(__git_ps1 ' (%s)')\[\e[33;0m\] \[\e[1;31m\]>>\[\e[31;0m\]"
 
+#--------------------
+# Hub alias to Git
+# -------------------
+eval "$(hub alias -s)"
+
 #-----------------
 # Compass Commands
 #-----------------
 alias watch="compass watch ."
 alias compile="compass compile"
+function compass_compile() {
+	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
+}
 
 #-----------------
 # Reveal in Finder
