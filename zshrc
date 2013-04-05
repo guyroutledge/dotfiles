@@ -23,7 +23,7 @@ ZSH_THEME="../../guyroutledge"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx battery github sublime)
+plugins=(git osx battery github sublime rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/guy/bin:/usr/local/git/bin
+export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/guy/bin:/usr/local/git/bin:/Users/guy/.rvm
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
@@ -141,3 +141,7 @@ alias ip="ifconfig | grep inet"
 function optim {
   open -a ImageOptim.app $1
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -e "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
