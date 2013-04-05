@@ -29,6 +29,8 @@ set showmode
 set showcmd
 " Allow hiding buffers that have changes
 set hidden
+" If files are modified outside Vim, read them automatically
+set autoread
 
 " When changing buffers with :e, match with wildcards
 set wildmenu
