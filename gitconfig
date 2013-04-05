@@ -33,6 +33,7 @@
         ci = commit
         br = branch
         co = checkout
+        pr = pull --rebase
         df = diff
         dc = diff --cached
         lg = log --abbrev-commit --color-words
