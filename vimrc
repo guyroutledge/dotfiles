@@ -149,3 +149,10 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 map <leader>vimrc :tabe ~/dotfiles/vimrc<cr>
 autocmd bufwritepost vimrc source $MYVIMRC
 
+" bindings for CommandT as <leader>t is used by easyMotion
+" e is for edit so Ctrl-e is a reasonable mapping
+" b is for buffer so Ctrl-b is the thinking where search is limited to buffer
+nnoremap <silent> <C-e> :CommandT<CR>
+nnoremap <silent> <C-b> :CommandTBuffer<CR>
+let g:CommandTMaxHeight=25
+let g:CommandTMatchWindowReverse=1 
