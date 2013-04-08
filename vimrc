@@ -139,12 +139,13 @@ nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
 nnoremap <leader>[ f,a<CR><ESC>
 
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-nnoremap <silent><C-J> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+" Cmd-j/k deletes blank line below/above, and Ctrl-j/k inserts.
+nnoremap <silent><D-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><D-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " comma-vrc opens vimrc in a new tab and automagically sources on save
 map <leader>vimrc :tabe ~/dotfiles/vimrc<cr>
 autocmd bufwritepost vimrc source $MYVIMRC
+
