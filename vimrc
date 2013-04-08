@@ -59,6 +59,11 @@ set laststatus=2
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
 
+" Call Powerline and set patched font and fancy symbols
+set guifont=Ubuntu\ Mono\ for\ Powerline:h14
+set rtp+=~/dotfiles/vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+
 " Always use Perl-style regular expressions
 nnoremap / /\v
 vnoremap / /\v
@@ -69,8 +74,6 @@ set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
 
 " We're using a 256 colour terminal.
 set t_Co=256
-" Set the default font: 12px Monaco
-set gfn=Monaco:h12
 " Set the default theme
 let g:zenburn_high_Contrast = 1
 colorscheme zenburn
