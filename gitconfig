@@ -2,69 +2,69 @@
 	name = Guy Routledge
 	email = guy@bigfish.co.uk
 [merge]
-    summary = true
+	summary = true
 [mergetool]
 	keepBackup = true
 	prompt = false
 [core]
-        quotepath = false
-        excludesfile = ~/.gitignore
+	quotepath = false
+	excludesfile = ~/.gitignore
 	editor = /usr/local/bin/vim
 [branch]
-        autosetupmerge = true
-        autosetuprebase = always
+	autosetupmerge = true
+	autosetuprebase = always
 [color]
-        branch = auto
-        diff = auto
-        status = auto
+	branch = auto
+	diff = auto
+	status = auto
 [color "branch"]
-        current = green
-        local = green
-        remote = red
+	current = green
+	local = green
+	remote = red
 [color "diff"]
-        meta = red
-        frag = magenta bold
-        old = red bold
-        new = green bold
+	meta = red
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-        added = green
-        changed = red
-        untracked = magenta
+	added = green
+	changed = red
+	untracked = magenta
 [alias]
-        st = status
-        ci = commit
-        br = branch
-        co = checkout
-        pr = pull --rebase
-        df = diff
-        dc = diff --cached
-        lg = log --abbrev-commit --color-words
-        lol = log --graph --decorate --pretty=oneline --abbrev-commit
-        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-        ls = ls-files
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	pr = pull --rebase
+	df = diff
+	dc = diff --cached
+	lg = log --abbrev-commit --color-words
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
 
-		code-review = difftool origin/master...
+	code-review = difftool origin/master...
 
-		# Find changes introduced by a merge:
-		# `git merge-log` shows the commits that were introduced in a given merge
-		# `git merge-diff` shows the actual changes that were introduced by a given merge
-		# Both commands accept an optional commitish; if ommitted, the last merge commit is used
+	# Find changes introduced by a merge:
+	# `git merge-log` shows the commits that were introduced in a given merge
+	# `git merge-diff` shows the actual changes that were introduced by a given merge
+	# Both commands accept an optional commitish; if ommitted, the last merge commit is used
 
-		merge-span = "!f() { echo $(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f1)..$(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
-		merge-log  = "!git log `git merge-span $1`"
-		merge-diff = "!git diff `git merge-span $1`"
+	merge-span = "!f() { echo $(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f1)..$(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
+	merge-log  = "!git log `git merge-span $1`"
+	merge-diff = "!git diff `git merge-span $1`"
 
-        # Show files ignored by git:
-        ign = ls-files -o -i --exclude-standard
-		switch = !legit switch \"$@\"
-		branches = !legit branches
-		sprout = !legit sprout \"$@\"
-		unpublish = !legit unpublish \"$@\"
-		harvest = !legit harvest \"$@\"
-		sync = !legit sync \"$@\"
-		publish = !legit publish \"$@\"
-		graft = !legit graft \"$@\"
-		conflicts = !git ls-files -u | cut -f 2 | sort -u
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [credential]
 	helper = osxkeychain
 [push]
