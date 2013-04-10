@@ -5,9 +5,11 @@
     summary = true
 [mergetool]
 	keepBackup = true
+	prompt = false
 [core]
         quotepath = false
         excludesfile = ~/.gitignore
+	editor = /usr/local/bin/vim
 [branch]
         autosetupmerge = true
         autosetuprebase = always
@@ -42,6 +44,15 @@
         ls = ls-files
 
 		code-review = difftool origin/master...
+
+		# Find changes introduced by a merge:
+		# `git merge-log` shows the commits that were introduced in a given merge
+		# `git merge-diff` shows the actual changes that were introduced by a given merge
+		# Both commands accept an optional commitish; if ommitted, the last merge commit is used
+
+		merge-span = "!f() { echo $(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f1)..$(git log -1 $1 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
+		merge-log  = "!git log `git merge-span $1`"
+		merge-diff = "!git diff `git merge-span $1`"
 
         # Show files ignored by git:
         ign = ls-files -o -i --exclude-standard
