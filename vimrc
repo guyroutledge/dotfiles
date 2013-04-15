@@ -52,6 +52,8 @@ set cursorline
 set ruler
 " Use relative line numbers rather than absolute ones
 set relativenumber
+" Set a visual indicator of 72 chars for text wrapping
+set colorcolumn=72
 
 set backspace=indent,eol,start
 set laststatus=2
@@ -159,3 +161,6 @@ nnoremap <silent> <C-e> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMaxHeight=25
 let g:CommandTMatchWindowReverse=1 
+
+" bindings for NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
