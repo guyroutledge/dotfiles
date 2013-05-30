@@ -49,3 +49,12 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/bundle/lusty-explorer"]
+	path = vim/bundle/lusty-explorer
+	url = git@github.com:sjbach/lusty.git
+[submodule "vim/bundle/fuzzyfinder"]
+	path = vim/bundle/fuzzyfinder
+	url = git@github.com:vim-scripts/FuzzyFinder.git

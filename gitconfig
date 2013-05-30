@@ -31,6 +31,15 @@
 	changed = red
 	untracked = magenta
 [alias]
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	publish = "!git push -u origin $(git branch-name)"
+	unpublish = "!git push origin :$(git branch-name)"
+
+	into-staging = "!CURRENT_BRANCH=$(git branch-name); git checkout staging; git pull; git merge --no-ff $CURRENT_BRANCH"
+	into-master = "!CURRENT_BRANCH=$(git branch-name); git checkout master; git pull; git merge --no-ff $CURRENT_BRANCH"
+	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+	recreate-staging = "!git recreate staging"
+
 	st = status
 	ci = commit
 	br = branch
@@ -59,10 +68,8 @@
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
 	harvest = !legit harvest \"$@\"
 	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [credential]
