@@ -52,8 +52,8 @@ set cursorline
 set ruler
 " Use relative line numbers rather than absolute ones
 set relativenumber
-" Set a visual indicator of 72 chars for text wrapping
-set colorcolumn=72
+" Set a visual indicator of 72 chars for text wrapping on commit msg
+autocmd FileType gitcommit set colorcolumn=72 spell
 
 set backspace=indent,eol,start
 set laststatus=2
@@ -162,5 +162,16 @@ nnoremap <silent> <C-b> :CommandTBuffer<CR>
 let g:CommandTMaxHeight=25
 let g:CommandTMatchWindowReverse=1 
 
+" mappings for CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " bindings for NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
+
+" add auto close tags to filetypes that use HTML
+au Filetype php,html,xml,xsl source ~/dotfiles/vim/bundle/closetag/closetag.vim
+" set up mappings for tag closing
+" set macmeta
+inoremap <C-D-.> <C-R>=GetCloseTag()<CR>
+map <C-D-.> a<C-D-.><ESC>
