@@ -63,6 +63,11 @@ source ~/.git-completion.sh
 # -------------------
 eval "$(hub alias -s)"
 
+#--------------------
+# Import GHI token
+# -------------------
+source ~/.ghirc
+
 #-----------------
 # Compass Commands
 #-----------------
