@@ -35,6 +35,8 @@ export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/g
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
+bindkey -v
+
 #------------------------
 # Tunnel into Tom and Co
 #------------------------
