@@ -35,7 +35,11 @@ export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/g
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
+# Use Vim key bindings (HT @robmil)
 bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
+bindkey -M viins 'jj' vi-cmd-mode
 
 #------------------------
 # Tunnel into Tom and Co
