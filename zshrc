@@ -41,6 +41,9 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'jj' vi-cmd-mode
 
+# Tell less not to scroll for content less than one screen in height
+export LESS=' -RFX '
+
 #------------------------
 # Tunnel into Tom and Co
 #------------------------
