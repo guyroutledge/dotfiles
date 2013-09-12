@@ -22,6 +22,7 @@ set shiftwidth=4
 set shiftround
 " This is here to wrap Git commit messages to 72 chars.
 filetype indent plugin on
+autocmd FileType ruby,erb,haml setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Display when in insert/visual/replace mode in the status bar
 set showmode
@@ -62,7 +63,7 @@ set laststatus=2
 call pathogen#infect()
 
 " Call Powerline and set patched font and fancy symbols
-set guifont=Ubuntu\ Mono\ for\ Powerline:h14
+set guifont=Inconsolata\ for\ Powerline:h14
 set rtp+=~/dotfiles/vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
@@ -127,7 +128,7 @@ inoremap jj <ESC>
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " strip trailing whitespace on save
-autocmd FileType css,scss,sass,html,php,javascript,js,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType css,scss,sass,html,php,javascript,js,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " comma-A: start an Ack search
 nnoremap <leader>a :Ack
