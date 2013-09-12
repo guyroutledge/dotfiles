@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/guy/bin:/usr/local/git/bin:/Users/guy/.rvm
+export PATH=/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/guy/bin:/usr/local/git/bin:/Users/guy/.rvm
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
@@ -40,6 +40,12 @@ bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'jj' vi-cmd-mode
+
+# @see http://vim.1045645.n5.nabble.com/MacVim-and-PATH-tt3388705.html#a3392363
+# Ensure MacVim has same shell as Terminal
+if [[ -a /etc/zshenv ]]; then
+  sudo mv /etc/zshenv /etc/zprofile
+fi
 
 # Tell less not to scroll for content less than one screen in height
 export LESS=' -RFX '
