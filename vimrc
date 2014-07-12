@@ -63,7 +63,7 @@ set laststatus=2
 call pathogen#infect()
 
 " Call Powerline and set patched font and fancy symbols
-set guifont=Inconsolata\ for\ Powerline:h14
+set guifont=Inconsolata\ for\ Powerline:h16
 set rtp+=~/dotfiles/vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
@@ -98,11 +98,12 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Soft-wrap text
-set wrap
+" No-wrap text
+set nowrap
 " Wrap at 72 chars wide
 set textwidth=72
 set formatoptions=qrn1
+autocmd FileType md,markdown,modula2 setlocal formatoptions+=t
 
 " Space in normal mode centres the screen on the current line
 nmap <space> zz
@@ -140,6 +141,8 @@ nnoremap <leader>q gqip
 nnoremap <leader>w o<ESC>kgqip}dd
 " comma-v: select the just-pasted text
 nnoremap <leader>v V`]
+" Set paste, paste, set nopaste
+nnoremap <Leader>P :set paste<CR>o<esc>"*]p:set nopaste<cr>
 " comma-=: align assignments in current block
 nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
@@ -176,3 +179,8 @@ au Filetype php,html,xml,xsl source ~/dotfiles/vim/bundle/closetag/closetag.vim
 " set macmeta
 inoremap <C-D-.> <C-R>=GetCloseTag()<CR>
 map <C-D-.> a<C-D-.><ESC>
+
+" project specific tab settings
+" people do love to argue about tabs vs. spaces but this way you can 
+" override the sensible default settings of using tabs
+autocmd BufNewFile,BufRead ~/Sites/wigwamm/listing-app/* set nowrap et ts=2 sw=2

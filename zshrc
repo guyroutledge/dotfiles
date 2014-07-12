@@ -24,8 +24,10 @@ ZSH_THEME="../../guyroutledge"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx battery github sublime rvm)
+autoload -U zmv
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/dotfiles/k.sh
 
 # Turn off auto correct
 unsetopt correct_all
@@ -140,6 +142,20 @@ alias steves="cd ~/Sites/stevesleaves"
 alias snip="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/"
 
 alias verbose="cd ~/Sites/guy/verbose/"
+
+#------------
+# Deploy Jekyll
+#------------
+
+alias deploymyblog="cd ~/Sites/guyroutledge/jekyll && jekyll build && cd _site && rsync -rui . guyroutledge.co.uk:/var/www/guyroutledge.co.uk/public_html_jekyll"
+
+#------------
+# Syntax highlight text for Keynote
+#------------
+
+function highlight() {
+	pbpaste | pygmentize -O style=monokai -l $1 -f rtf | pbcopy
+}
 
 #------------
 # Edit .zshrc

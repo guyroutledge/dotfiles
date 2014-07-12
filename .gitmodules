@@ -58,3 +58,6 @@
 [submodule "vim/bundle/fuzzyfinder"]
 	path = vim/bundle/fuzzyfinder
 	url = git@github.com:vim-scripts/FuzzyFinder.git
+[submodule "vim/bundle/vim-liquid"]
+	path = vim/bundle/vim-liquid
+	url = git@github.com:tpope/vim-liquid.git
