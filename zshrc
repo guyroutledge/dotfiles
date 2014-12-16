@@ -170,6 +170,12 @@ alias zrc="mvim ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ip="ifconfig | grep inet"
 
+#---------
+# Postgres
+#---------
+
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+
 #----------------
 # Optimize Images
 #----------------
@@ -181,3 +187,6 @@ function optim {
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -e "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
