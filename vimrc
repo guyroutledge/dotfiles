@@ -62,10 +62,9 @@ set laststatus=2
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
 
-" Call Powerline and set patched font and fancy symbols
+" Set up Airline
 set guifont=Inconsolata\ for\ Powerline:h16
-set rtp+=~/dotfiles/vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
 " Always use Perl-style regular expressions
 nnoremap / /\v
