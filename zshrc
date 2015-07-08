@@ -84,6 +84,7 @@ eval "$(hub alias -s)"
 # Import GHI token
 # -------------------
 source ~/.ghirc
+source ~/.gitpullsrc
 
 #-----------------
 # Compass Commands
@@ -175,6 +176,12 @@ alias ip="ifconfig | grep inet"
 #---------
 
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+
+#---------
+# Redis
+#---------
+
+alias redis_start="redis-server /usr/local/etc/redis.conf"
 
 #----------------
 # Optimize Images

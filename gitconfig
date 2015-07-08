@@ -1,6 +1,7 @@
 [user]
 	name = Guy Routledge
 	email = mail@guyroutledge.co.uk
+	token = GITPULLS_TOKEN
 [merge]
 	summary = true
 [mergetool]
@@ -87,3 +88,8 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
+[github]
+	token = 70bf591687b1481ce65e22670a9dc3b902078f43
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

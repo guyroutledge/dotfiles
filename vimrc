@@ -77,8 +77,8 @@ set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
 " We're using a 256 colour terminal.
 set t_Co=256
 " Set the default theme
-let g:zenburn_high_Contrast = 1
-colorscheme zenburn
+" let g:zenburn_high_Contrast = 1
+colorscheme monokai
 
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
@@ -160,8 +160,8 @@ autocmd bufwritepost vimrc source $MYVIMRC
 " bindings for CommandT as <leader>t is used by easyMotion
 " e is for edit so Ctrl-e is a reasonable mapping
 " b is for buffer so Ctrl-b is the thinking where search is limited to buffer
-nnoremap <silent> <C-e> :CommandT<CR>
-nnoremap <silent> <C-b> :CommandTBuffer<CR>
+nnoremap <silent> <C-e> :CommandTFlush<cr>\|:CommandT<CR>
+nnoremap <silent> <C-b> :CommandTFlush<cr>\|:CommandTBuffer<CR>
 let g:CommandTMaxHeight=25
 let g:CommandTMatchWindowReverse=1 
 
