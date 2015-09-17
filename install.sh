@@ -5,7 +5,7 @@ dir=~/dotfiles
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # list of files/folders to symlink in homedir
-files="bashrc vimrc vim zshrc oh-my-zsh screenrc gitconfig gitignore"
+files="bashrc vimrc vim zshrc oh-my-zsh screenrc gitconfig gitignore git-completion.sh"
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
